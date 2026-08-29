@@ -1,6 +1,6 @@
 // Summary statistics over arrays of numbers.
 
-export def Min(numbers)
+export def min(numbers)
   if numbers.size() == 0
     return nil
   end
@@ -13,7 +13,7 @@ export def Min(numbers)
   return lowest
 end
 
-export def Max(numbers)
+export def max(numbers)
   if numbers.size() == 0
     return nil
   end
@@ -28,14 +28,14 @@ end
 
 // Mean returns a float, so an average is not silently truncated the way
 // integer division would truncate it.
-export def Mean(numbers)
+export def mean(numbers)
   if numbers.size() == 0
     return nil
   end
   return numbers.sum().to_f() / numbers.size().to_f()
 end
 
-export def Median(numbers)
+export def median(numbers)
   if numbers.size() == 0
     return nil
   end

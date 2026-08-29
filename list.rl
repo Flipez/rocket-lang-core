@@ -1,14 +1,18 @@
 // Higher-order helpers for arrays. RocketLang has no map, filter or reduce of
 // its own, but functions are values, so they can be written in the language.
+//
+// Names are lowercase to match the language's own methods (upcase, to_s,
+// include?). Capitalization carries no meaning: `export` decides what is
+// public.
 
-export def Each(items, fn)
+export def each(items, fn)
   foreach item in items
     fn(item)
   end
   return nil
 end
 
-export def Map(items, fn)
+export def map(items, fn)
   result = []
   foreach item in items
     result.push(fn(item))
@@ -16,7 +20,7 @@ export def Map(items, fn)
   return result
 end
 
-export def Filter(items, fn)
+export def filter(items, fn)
   result = []
   foreach item in items
     if fn(item)
@@ -26,7 +30,7 @@ export def Filter(items, fn)
   return result
 end
 
-export def Reduce(items, initial, fn)
+export def reduce(items, initial, fn)
   carry = initial
   foreach item in items
     carry = fn(carry, item)
@@ -34,7 +38,7 @@ export def Reduce(items, initial, fn)
   return carry
 end
 
-export def Find(items, fn)
+export def find(items, fn)
   foreach item in items
     if fn(item)
       return item
@@ -43,7 +47,7 @@ export def Find(items, fn)
   return nil
 end
 
-export def Any(items, fn)
+export def any?(items, fn)
   foreach item in items
     if fn(item)
       return true
@@ -52,7 +56,7 @@ export def Any(items, fn)
   return false
 end
 
-export def All(items, fn)
+export def all?(items, fn)
   foreach item in items
     if !fn(item)
       return false

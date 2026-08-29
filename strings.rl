@@ -1,20 +1,20 @@
 // String helpers that the STRING literal does not provide.
 
-export def StartsWith(s, prefix)
+export def starts_with?(s, prefix)
   if prefix.size() > s.size()
     return false
   end
   return s[0:prefix.size()] == prefix
 end
 
-export def EndsWith(s, suffix)
+export def ends_with?(s, suffix)
   if suffix.size() > s.size()
     return false
   end
   return s[s.size() - suffix.size():] == suffix
 end
 
-export def Repeat(s, times)
+export def repeat(s, times)
   out = ""
   foreach i in times
     out = out + s
@@ -22,7 +22,7 @@ export def Repeat(s, times)
   return out
 end
 
-export def PadLeft(s, width, pad)
+export def pad_left(s, width, pad)
   out = s
   while out.size() < width
     out = pad + out
@@ -30,7 +30,7 @@ export def PadLeft(s, width, pad)
   return out
 end
 
-export def PadRight(s, width, pad)
+export def pad_right(s, width, pad)
   out = s
   while out.size() < width
     out = out + pad
@@ -38,8 +38,8 @@ export def PadRight(s, width, pad)
   return out
 end
 
-// TitleCase uppercases the first character of each space-separated word.
-export def TitleCase(s)
+// title_case uppercases the first character of each space-separated word.
+export def title_case(s)
   words = []
   foreach word in s.split(" ")
     if word.size() == 0
