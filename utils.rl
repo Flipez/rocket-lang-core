@@ -1,3 +1,3 @@
 export def Hello()
-  puts "Hello from rocket-lang-core"
+  puts("Hello from rocket-lang-core")
 end
